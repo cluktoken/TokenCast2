@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --tc-bg: #0b0f1a;
+  --tc-surface: #141a2a;
+  --tc-border: #243049;
+  --tc-text: #e6ebf5;
+  --tc-muted: #8a94ad;
+  --tc-accent: #6366f1;
+}
+
+/* Themes are extensible: add a [data-theme="x"] block and a matching backend
+   theme string. Players and the builder both read these variables. */
+[data-theme="dark"] {
+  --tc-bg: #0b0f1a; --tc-surface: #141a2a; --tc-border: #243049;
+  --tc-text: #e6ebf5; --tc-muted: #8a94ad; --tc-accent: #6366f1;
+}
+[data-theme="light"] {
+  --tc-bg: #f4f6fb; --tc-surface: #ffffff; --tc-border: #e2e8f0;
+  --tc-text: #0f172a; --tc-muted: #64748b; --tc-accent: #4f46e5;
+}
+[data-theme="cyberpunk"] {
+  --tc-bg: #0a0014; --tc-surface: #170a2b; --tc-border: #00f0ff;
+  --tc-text: #f5e9ff; --tc-muted: #b388ff; --tc-accent: #ff00d4;
+}
+[data-theme="neon"] {
+  --tc-bg: #02040a; --tc-surface: #0a0f1f; --tc-border: #39ff14;
+  --tc-text: #eafff0; --tc-muted: #7fffa6; --tc-accent: #39ff14;
+}
+[data-theme="corporate"] {
+  --tc-bg: #f8fafc; --tc-surface: #ffffff; --tc-border: #d8dee9;
+  --tc-text: #1e293b; --tc-muted: #64748b; --tc-accent: #0ea5e9;
+}
+
+html, body {
+  background: var(--tc-bg);
+  color: var(--tc-text);
+  height: 100%;
+}
+
+.tc-surface { background: var(--tc-surface); border-color: var(--tc-border); }
+.tc-accent { background: var(--tc-accent); }
+.tc-accent-text { color: var(--tc-accent); }
+.tc-muted { color: var(--tc-muted); }
